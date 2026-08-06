@@ -2,12 +2,12 @@ package com.example.pastebin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 public class PastebinApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(PastebinApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(PastebinApplication.class, args);
+    }
 }
