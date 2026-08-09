@@ -18,5 +18,20 @@ services:
     ports:
       - "6379:6379"
 
+  api:
+    build: .
+    container_name: pastebin_spring_api
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: pastebin
+      DATABASE_PASSWORD: pastebin
+      DATABASE_NAME: pastebin
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - postgres
+      - redis
+
 volumes:
   pgdata:
